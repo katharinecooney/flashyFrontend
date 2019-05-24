@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import profile from '../lib/profile-service';
+import {Link} from 'react-router-dom';
 
 class ProfileGroups extends Component {
 
@@ -30,6 +31,8 @@ class ProfileGroups extends Component {
               <p>{group.subject}</p>
             </div>)})
       )}
+      <Link to="/group/add-group">Create Group</Link>
+      <Link to="/group/join-group">Join Group</Link>
       </div>
     );
   }
