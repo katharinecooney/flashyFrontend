@@ -5,7 +5,8 @@ import group from '../lib/group-service';
 class CreateGroup extends Component {
   state = {
     school: '',
-    subject: ''
+    subject: '',
+    passcode: ''
   }
 
   handleSubmit = (event) => {
@@ -20,10 +21,7 @@ class CreateGroup extends Component {
         subject: '',
         passcode: ''
       })
-    } )
-
-    
-    
+    })    
   }
 
   handleChange = (event) => {
@@ -31,7 +29,7 @@ class CreateGroup extends Component {
     let {name, value} = event.target
     this.setState({
       [name]: value
-    }, () => console.log(this.state));
+    });
   }
   
   render () {

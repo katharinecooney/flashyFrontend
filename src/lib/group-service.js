@@ -28,9 +28,9 @@ class Group {
       .then(({ data }) => data);
   }
 
-  saveCard () {
+  saveCard (groupId, cardId) {
     return this.group
-      .put('/group/:groupId/card/:cardId/save')
+      .put(`/group/${groupId}/card/${cardId}/save`)
       .then(({ data }) => data);
   }
 
