@@ -6,29 +6,39 @@ class SingleGroup extends Component {
   state = {
     school: '',
     subject: '',
-    flashcard: ''
-
+    flashcards: []
   }
 
   componentDidMount(){
-    // console.log(this.props.match)
     group.viewGroup(this.props.match.params.id)
       .then(group => this.setState({
         school: group.school,
-        subject: group.subject
-      }))
+        subject: group.subject,
+        flashcards: group.groupDeck
+      })  
+    )
   }
 
   render () {
-    const {school, subject, flashcard} = this.state;
+    const {school, subject, flashcards} = this.state;
+    const groupDeckCards = flashcards.length ? (
+      flashcards.map(card => {
+        return (
+          <div>
+            <p>{card.frontText}</p>
+            <p>{card.backText}</p>
+          </div>
+        )
+      })
+    ) : (<div>No flashcards saved</div>)
     return (
       <div>
         <h1>{school}</h1>
         <h3>{subject}</h3>
+        <h3>{groupDeckCards}</h3>
       </div>
     );
   }
 }
 
-export default SingleGroup
-;
+export default SingleGroup;
