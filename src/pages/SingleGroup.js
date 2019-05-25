@@ -4,41 +4,56 @@ import group from '../lib/group-service';
 import {Link} from 'react-router-dom';
 
 class SingleGroup extends Component {
-  state = {
-    school: '',
-    subject: '',
-    flashcards: []
+  constructor(props){
+    super(props);
+      this.state = {
+        groupId: '',
+        school: '',
+        subject: '',
+        flashcards: []
+      }
   }
 
+  handeRouteChange = (event) => {
+    event.preventDefault();
+    const {groupId} = this.state;
+    const {cardId} =  this.props;
+    group.saveCard(groupId, cardId)
+    .then(console.log('saved card!'))
+    
+  }
+ 
   componentDidMount(){
+    console.log(this.state)
     group.viewGroup(this.props.match.params.id)
       .then(group => this.setState({
         school: group.school,
         subject: group.subject,
-        flashcards: group.groupDeck
+        flashcards: group.groupDeck,
+        groupId: group._id
       })  
     )
   }
 
-  handleClick = (event) => {
-    console.log(event.target)
-  }
+  
 
   render () {
-    const {school, subject, flashcards} = this.state;
+    const {school, subject, flashcards, groupId} = this.state;
+    console.log(school, subject, flashcards, groupId)
     const groupDeckCards = flashcards.length ? (
       flashcards.map(card => {
         return (
-          <div>
-            <button onClick={this.handleClick}>SAVE</button>
-            
-            
+          <div style={{border: '1px solid black', marginBottom: '20px'}} key={card._id}>
             <p>{card.frontText}</p>
             <p>{card.backText}</p>
+            <button>SAVE</button>
           </div>
         )
       })
-    ) : (<div>No flashcards saved</div>)
+    ) 
+    : 
+    (<div>No flashcards saved</div>)
+    
     return (
       <div>
         <h1>{school}</h1>

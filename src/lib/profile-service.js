@@ -27,15 +27,15 @@ class Profile {
       .then(({ data }) => data);
   }
 
-  showSingleDeck () {
+  showSingleDeck (deckId) {
     return this.profile
-      .get('/profile/:deckId')
+      .get(`/profile/${deckId}`)
       .then(({ data }) => data);
   }
 
-  deleteCard () {
+  deleteCard (groupId, cardId) {
     return this.profile
-      .delete('/profile/:groupId/:cardId/delete')
+      .delete(`/profile/${groupId}/${cardId}/delete`)
       .then(({ data }) => data);
   }
 }

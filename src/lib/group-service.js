@@ -21,10 +21,10 @@ class Group {
       .then(({ data }) => data);
   }
 
-  createCard (card) {
+  createCard (card, groupId) {
     const { frontText, backText } = card;
     return this.group
-      .post('/group/:groupId/card/create', { frontText, backText })
+      .post(`/group/${groupId}/card/create`, { frontText, backText })
       .then(({ data }) => data);
   }
 

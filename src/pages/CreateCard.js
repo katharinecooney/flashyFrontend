@@ -33,7 +33,12 @@ class CreateCard extends Component {
   render () {
     return (
       <div>
-
+        <div className="frontCard">
+          <textarea name="frontCard" id="frontCard" cols="30" rows="10"></textarea>
+        </div>
+        <div className="backCard">
+          <textarea name="backCard" id="backCard" cols="30" rows="10"></textarea>
+        </div>
       </div>
     );
   }

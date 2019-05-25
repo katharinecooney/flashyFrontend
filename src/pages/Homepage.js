@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import '../stylesheets/Homepage.css';
 
-function Homepage () {
-  return (
-    <div>
-      <h1>Flashy</h1>
-      <Link to="/login">LOGIN</Link>
-      <Link to="/signup">SIGNUP</Link>
-    </div>
-  );
+class Homepage extends Component {
+  render () {
+    return (
+
+      <div className="homepage">
+        <h1>Flashy</h1>
+        <Link className="homepage-button" to="/login">LOGIN</Link>
+        <Link className="homepage-button" to="/signup">SIGNUP</Link>
+      </div>
+
+    );
+  }
 }
 
 export default Homepage;
