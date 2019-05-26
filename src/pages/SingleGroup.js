@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import group from '../lib/group-service';
 import {Link} from 'react-router-dom';
+import '../stylesheets/singleGroup.css';
+import Navbar from '../components/Navbar';
 
 class SingleGroup extends Component {
   constructor(props){
@@ -43,11 +45,13 @@ class SingleGroup extends Component {
     const groupDeckCards = flashcards.length ? (
       flashcards.map(card => {
         return (
-          <div style={{border: '1px solid black', marginBottom: '20px'}} key={card._id}>
-            <p>{card.frontText}</p>
-            <p>{card.backText}</p>
-            <button>SAVE</button>
-          </div>
+          
+            <div className="group-flashcard" key={card._id}>
+              <p>{card.frontText}</p>
+              <p>{card.backText}</p>
+              <button>SAVE</button>
+            </div>
+          
         )
       })
     ) 
@@ -55,10 +59,20 @@ class SingleGroup extends Component {
     (<div>No flashcards saved</div>)
     
     return (
-      <div>
-        <h1>{school}</h1>
-        <h3>{subject}</h3>
-        <h3>{groupDeckCards}</h3>
+      <div className="single-group-page">
+        <div className="single-group-banner">
+          <h1>{school}</h1>
+          <h3>{subject}</h3>
+          <Link to={{
+            pathname: '/group/' + groupId + '/new-card'
+          }}>
+          <span>Add New Card</span>
+          </Link>
+        </div>
+        <div className="group-flashcard-container">
+          <h3>{groupDeckCards}</h3>
+        </div>
+        <Navbar />
       </div>
     );
   }

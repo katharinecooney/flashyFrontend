@@ -14,6 +14,7 @@ div.profile-groups-container {
 
 div.profile-groups-page .profile-group {
   border: 1px solid black;
+  border-radius: 5px;
   width: 80vw;
   margin-top: 20px;
   display: flex;
@@ -30,11 +31,12 @@ div.profile-groups-page .profile-group a {
 div.profile-groups-button-container {
   display: flex;
   justify-content: space-evenly;
+  margin-bottom: 70px;
 }
 
 div.profile-groups-button-container a {
   text-decoration: none;
-  margin-top: 20px;
+  margin: 20px 0;
   height: 40px;
   border: 1px solid black;
   display: flex;

@@ -1,0 +1,25 @@
+div.single-group-page .single-group-banner {
+  background-color: yellow;
+  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div.single-group-page .group-flashcard {
+  width: 80vw;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 250px;
+  margin: 20px 0;
+}
+
+div.single-group-page .group-flashcard-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 70px;
+}

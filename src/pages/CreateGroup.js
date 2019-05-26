@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import group from '../lib/group-service';
+import Navbar from '../components/Navbar';
+import '../stylesheets/createGroup.css';
 
 class CreateGroup extends Component {
   state = {
@@ -35,6 +37,9 @@ class CreateGroup extends Component {
   render () {
     return (
       <div>
+        <div className='create-group-banner'>
+          <h1>Create Group</h1>
+        </div>
         <form onSubmit={this.handleSubmit}>
           <input name="school" type="text" placeholder="school" value={this.state.school} onChange={(event) => this.handleChange(event)} />
 
@@ -43,6 +48,7 @@ class CreateGroup extends Component {
           <input name="passcode" type="text" value={this.state.passcode} placeholder="passcode" onChange={(event) => this.handleChange(event)} />
           <button type="submit">Submit</button>
         </form>
+        <Navbar />
       </div>
     );
   }

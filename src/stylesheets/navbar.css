@@ -6,7 +6,6 @@ div.navbar {
   align-items: center;
   position: fixed;
   bottom: 0;
-  /* padding: 10px 0; */
   border: 1px solid lavender;
   background-color: skyblue;
 }

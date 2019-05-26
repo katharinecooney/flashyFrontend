@@ -11,10 +11,10 @@ class Profile extends Component {
 
   }
 
-  componentDidMount(){    
-    group.viewGroup("5ce6b65b381f624f3f44d286")
-      .then((data) => console.log(data))
-  };
+  // componentDidMount(){    
+  //   group.viewGroup("5ce6b65b381f624f3f44d286")
+  //     .then((data) => console.log(data))
+  // };
 
   render() {
     console.log(this.props);
