@@ -1,0 +1,40 @@
+div.signup {
+  min-height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: pink;
+}
+
+div.signup-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+
+div.signup form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100vw;
+  padding: 20px 0;
+}
+
+div.signup form input {
+  margin: 5px 0 15px;
+  width: 80%;
+  max-width: 400px;
+  height: 30px;
+  border: 1px solid rgb(231, 229, 229);
+}
+
+
+
+div.signup button {
+  height: 40px;
+  border-radius: 10px;
+  width: 100px;
+}

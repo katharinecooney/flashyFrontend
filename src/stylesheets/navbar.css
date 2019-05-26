@@ -1,0 +1,18 @@
+div.navbar {
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  /* padding: 10px 0; */
+  border: 1px solid lavender;
+  background-color: skyblue;
+}
+
+div.navbar img {
+  width: 20vw;
+  text-align: center;
+  height: 30px;
+}

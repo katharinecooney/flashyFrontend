@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import '../stylesheets/Homepage.css';
+import '../stylesheets/homepage.css';
 
 class Homepage extends Component {
   render () {
     return (
 
       <div className="homepage">
-        <h1>Flashy</h1>
-        <Link className="homepage-button" to="/login">LOGIN</Link>
-        <Link className="homepage-button" to="/signup">SIGNUP</Link>
+        <div className="homepage-content">
+          <h1>Flashy</h1>
+          <p>Who says studying can't be social? Login or signup to start collaborating with classmates!</p>
+          <div className="homepage-button-container">
+            <Link className="homepage-button" to="/login"><button>LOGIN</button></Link>
+            <Link className="homepage-button" to="/signup"><button>SIGNUP</button></Link>
+          </div>
+        </div>
+
       </div>
 
     );

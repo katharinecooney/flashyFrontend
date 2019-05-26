@@ -1,7 +1,28 @@
+body {
+  margin: 0;
+}
+
 div.homepage {
   display: flex;
   min-height: 100vh;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: #119da4;
+  
+  text-align: center;
+}
+
+div.homepage-content {
+  background-color: white;
+  padding: 20px 0;
+  width: 100vw;
+}
+
+div.homepage-button-container button {
+  height: 40px;
+  vertical-align: center;
+  border-radius: 10px;
+  margin: 0 10px;
+  width: 100px;
 }
