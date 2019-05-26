@@ -1,0 +1,44 @@
+div.profile-groups-page .profile-groups-banner {
+  background-color: yellow;
+  height: 35vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.profile-groups-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.profile-groups-page .profile-group {
+  border: 1px solid black;
+  width: 80vw;
+  margin-top: 20px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
+div.profile-groups-page .profile-group a {
+  text-decoration: none;
+}
+
+div.profile-groups-button-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+div.profile-groups-button-container a {
+  text-decoration: none;
+  margin-top: 20px;
+  height: 40px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35vw;
+}
