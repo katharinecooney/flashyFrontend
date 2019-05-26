@@ -1,0 +1,42 @@
+div.profile-decks {
+  min-height: 100vh;
+  background-color: lavenderblush;
+  /* display: flex; */
+}
+
+div.profile-decks h1 {
+  margin: 0;
+}
+
+div.profile-decks .profile-decks-banner {
+  background-color: yellow;
+  height: 35vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.decks-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 30px 0;
+}
+
+div.profile-decks div.single-deck {
+  border: 1px solid green;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px green;
+  width: 40vw;
+  height: 120px;
+  margin: 15px 0;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+div.profile-decks .deck-content a {
+  text-decoration: none;
+  text-align: center;
+  
+}

@@ -1,0 +1,41 @@
+html {
+  min-height: 100vh;
+  background-color: lavenderblush;
+}
+
+div.single-deck-page {
+  
+  
+  /* display: flex; */
+}
+
+div.single-deck-page h1 {
+  margin: 0;
+}
+
+div.single-deck-page .single-deck-banner {
+  background-color: yellow;
+  height: 35vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+div.personal-card-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 70px 0;
+  flex-wrap: wrap;
+}
+
+div.personal-flashcard {
+  width: 80vw;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 250px;
+  margin: 20px 0;
+}
