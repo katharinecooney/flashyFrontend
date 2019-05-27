@@ -12,19 +12,24 @@ class SingleGroup extends Component {
         groupId: '',
         school: '',
         subject: '',
-        flashcards: []
+        flashcards: [],
       }
   }
 
-  handeRouteChange = (event) => {
-    event.preventDefault();
-    const {groupId} = this.state;
-    const {cardId} =  this.props;
-    group.saveCard(groupId, cardId)
-    .then(console.log('saved card!'))
+  handleSave = (event, cardId) => {
     
+    const groupId = this.props.match.params.id;
+    
+    group.saveCard(groupId, cardId);
+   
   }
  
+  // saveCard (groupId, cardId) {
+  //   return this.group
+  //     .put(`/group/${groupId}/card/${cardId}/save`)
+  //     .then(({ data }) => data);
+  // }
+
   componentDidMount(){
     console.log(this.state)
     group.viewGroup(this.props.match.params.id)
@@ -37,23 +42,21 @@ class SingleGroup extends Component {
     )
   }
 
-  
-
   render () {
     const {school, subject, flashcards, groupId} = this.state;
     console.log(school, subject, flashcards, groupId)
     const groupDeckCards = flashcards.length ? (
       flashcards.map(card => {
         return (
-          
             <div className="group-flashcard" key={card._id}>
               <p>{card.frontText}</p>
               <p>{card.backText}</p>
-              <button>SAVE</button>
+              <button onClick={(event) => {
+                this.handleSave(event, card._id)
+                }}>SAVE</button>
             </div>
-          
-        )
-      })
+          )
+        })
     ) 
     : 
     (<div>No flashcards saved</div>)

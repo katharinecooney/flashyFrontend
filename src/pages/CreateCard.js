@@ -11,12 +11,6 @@ class CreateCard extends Component {
       backText: ''
     }
   }
-  
-  componentDidMount(){
-    console.log(this.props.match.params.id);
-  }
-
-  
 
   handleChange = (event) => {
     event.preventDefault();
