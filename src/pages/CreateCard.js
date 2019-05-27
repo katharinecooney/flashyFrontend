@@ -1,36 +1,44 @@
 import React, { Component } from 'react';
 import Navbar from '../components/Navbar';
 import '../stylesheets/createCard.css';
+import group from '../lib/group-service';
 
 class CreateCard extends Component {
-  state = {
-    frontText: '',
-    backText: ''
+  constructor(props) {
+    super(props);
+    this.state = {
+      frontText: '',
+      backText: ''
+    }
+  }
+  
+  componentDidMount(){
+    console.log(this.props.match.params.id);
   }
 
+  
 
-  // handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   let {school, subject, passcode } = event.target;
+  handleChange = (event) => {
+    event.preventDefault();
+    let {name, value} = event.target
+    this.setState({
+      [name]: value
+    });
+  }
 
-  //   group.createGroup(this.state)
-  //   .then((newGroup)=> {
-  //     console.log(newGroup);
-  //     this.setState({
-  //       school: '',
-  //       subject: '',
-  //       passcode: ''
-  //     })
-  //   })    
-  // }
-
-  // handleChange = (event) => {
-  //   event.preventDefault();
-  //   let {name, value} = event.target
-  //   this.setState({
-  //     [name]: value
-  //   });
-  // }
+  handleFormSubmit = (event) => {
+    event.preventDefault();
+    let {frontText, backText } = this.state;
+    let groupId = this.props.match.params.id;
+    group.createCard(this.state, groupId)
+    .then((newCard)=> {
+      console.log(newCard);
+      this.setState({
+        frontText: '',
+        backText: ''
+      })
+    })    
+  }
 
   render () {
     return (
@@ -40,12 +48,12 @@ class CreateCard extends Component {
         </div>
 
       <div className="create-card-container">
-        <form>
+        <form onSubmit={this.handleFormSubmit}>
           <label htmlFor="frontText">Enter Your Question</label>
-          <textarea name="frontText" id="frontText" >
+          <textarea onChange={this.handleChange} name="frontText" id="frontText" >
           </textarea>
           <label htmlFor="backText">Enter Your Answer</label>
-          <textarea name="backText" id="backText">
+          <textarea onChange={this.handleChange} name="backText" id="backText">
           </textarea>
           <button type="submit">Submit</button>
         </form>

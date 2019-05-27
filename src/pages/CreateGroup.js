@@ -36,18 +36,21 @@ class CreateGroup extends Component {
   
   render () {
     return (
-      <div>
+      <div className="create-group-page">
         <div className='create-group-banner'>
           <h1>Create Group</h1>
         </div>
-        <form onSubmit={this.handleSubmit}>
-          <input name="school" type="text" placeholder="school" value={this.state.school} onChange={(event) => this.handleChange(event)} />
-
-          <input name="subject" type="text" value={this.state.subject} placeholder="subject" onChange={(event) => this.handleChange(event)} />
-
-          <input name="passcode" type="text" value={this.state.passcode} placeholder="passcode" onChange={(event) => this.handleChange(event)} />
-          <button type="submit">Submit</button>
-        </form>
+        <div className="create-group-container">
+          <form onSubmit={this.handleSubmit}>
+            <label htmlFor="school">School</label>
+            <input name="school" type="text" value={this.state.school} onChange={(event) => this.handleChange(event)} />
+            <label htmlFor="subject">Subject</label>
+            <input name="subject" type="text" value={this.state.subject} onChange={(event) => this.handleChange(event)} />
+            <label htmlFor="passcode">Passcode</label>
+            <input name="passcode" type="text" value={this.state.passcode} onChange={(event) => this.handleChange(event)} />
+            <button type="submit">Submit</button>
+          </form>
+        </div>
         <Navbar />
       </div>
     );
