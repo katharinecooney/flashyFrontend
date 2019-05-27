@@ -7,7 +7,8 @@ div.single-group-page .single-group-banner {
   align-items: center;
 }
 
-div.single-group-page .group-flashcard {
+div.single-group-page .group-flashcard-front,
+.group-flashcard-back {
   width: 80vw;
   border: 1px solid black;
   display: flex;
@@ -22,4 +23,8 @@ div.single-group-page .group-flashcard-container {
   display: flex;
   justify-content: center;
   margin-bottom: 70px;
+}
+
+.hidden {
+  background-color: greenyellow;
 }

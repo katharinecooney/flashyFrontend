@@ -8,9 +8,9 @@ class Group {
     });
   }
 
-  joinGroup (user, groupId) {
+  joinGroup (passcode) {
     return this.group
-      .post(`/group/${groupId}/join`)
+      .post('/group/join', passcode)
       .then(({ data }) => data);
   }
 

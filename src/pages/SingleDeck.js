@@ -10,7 +10,6 @@ class SingleDeck extends Component {
     };
   }
 
-  // const  userDeck  = thi
   componentDidMount () {
     console.log(this.props.location.state);
   }

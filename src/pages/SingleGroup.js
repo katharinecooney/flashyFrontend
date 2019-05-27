@@ -13,22 +13,19 @@ class SingleGroup extends Component {
         school: '',
         subject: '',
         flashcards: [],
+        isFlipped: false
       }
   }
 
   handleSave = (event, cardId) => {
-    
     const groupId = this.props.match.params.id;
-    
     group.saveCard(groupId, cardId);
-   
+  
   }
- 
-  // saveCard (groupId, cardId) {
-  //   return this.group
-  //     .put(`/group/${groupId}/card/${cardId}/save`)
-  //     .then(({ data }) => data);
-  // }
+
+  handleFlip = () => {
+    this.setState({isFlipped: !this.state.isFlipped}, console.log(this.state));
+  }
 
   componentDidMount(){
     console.log(this.state)
@@ -43,18 +40,31 @@ class SingleGroup extends Component {
   }
 
   render () {
-    const {school, subject, flashcards, groupId} = this.state;
-    console.log(school, subject, flashcards, groupId)
+    const {school, subject, flashcards, groupId, isFlipped} = this.state;
     const groupDeckCards = flashcards.length ? (
       flashcards.map(card => {
         return (
-            <div className="group-flashcard" key={card._id}>
-              <p>{card.frontText}</p>
-              <p>{card.backText}</p>
-              <button onClick={(event) => {
-                this.handleSave(event, card._id)
-                }}>SAVE</button>
+          <div className="group-flashcard-flipper" key={card._id}>
+            <div className="group-flashcard">
+              <div className={this.state.isFlipped ? "hidden" : "group-flashcard-front"}>
+                <h3>QUESTION</h3>
+                <p>{card.frontText}</p>
+                <button onClick={(event) => {
+                  this.handleSave(event, card._id)
+                  }}>SAVE</button>
+                <button onClick={this.handleFlip}>FLIP</button>
+              </div>
+
+              <div className={this.state.isFlipped ? "hidden" : "group-flashcard-back"}>
+                <h3>ANSWER</h3>
+                <p>{card.backText}</p>
+                <button onClick={(event) => {
+                  this.handleSave(event, card._id)
+                  }}>SAVE</button>
+                <button onClick={this.handleFlip}>FLIP</button>
+              </div>
             </div>
+          </div>
           )
         })
     ) 
@@ -73,7 +83,7 @@ class SingleGroup extends Component {
           </Link>
         </div>
         <div className="group-flashcard-container">
-          <h3>{groupDeckCards}</h3>
+          <div>{groupDeckCards}</div>
         </div>
         <Navbar />
       </div>

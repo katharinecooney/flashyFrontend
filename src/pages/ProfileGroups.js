@@ -24,7 +24,7 @@ class ProfileGroups extends Component {
 
   render () {
     const {loading, groups} = this.state;
-    console.log(groups);
+    console.log('the groups are', groups);
     return (
       <div className="profile-groups-page">
         <div className="profile-groups-banner">
