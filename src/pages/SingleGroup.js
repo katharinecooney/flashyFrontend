@@ -24,11 +24,11 @@ class SingleGroup extends Component {
   }
 
   handleFlip = () => {
-    this.setState({isFlipped: !this.state.isFlipped}, console.log(this.state));
+    this.setState({isFlipped: !this.state.isFlipped}, console.log('handle flip', this.state));
   }
 
   componentDidMount(){
-    console.log(this.state)
+    console.log('component did mount', this.state)
     group.viewGroup(this.props.match.params.id)
       .then(group => this.setState({
         school: group.school,
@@ -39,56 +39,76 @@ class SingleGroup extends Component {
     )
   }
 
-  render () {
-    const {school, subject, flashcards, groupId, isFlipped} = this.state;
-    const groupDeckCards = flashcards.length ? (
-      flashcards.map(card => {
-        return (
-          <div className="group-flashcard-flipper" key={card._id}>
-            <div className="group-flashcard">
-              <div className={this.state.isFlipped ? "hidden" : "group-flashcard-front"}>
-                <h3>QUESTION</h3>
-                <p>{card.frontText}</p>
-                <button onClick={(event) => {
-                  this.handleSave(event, card._id)
-                  }}>SAVE</button>
-                <button onClick={this.handleFlip}>FLIP</button>
-              </div>
-
-              <div className={this.state.isFlipped ? "hidden" : "group-flashcard-back"}>
-                <h3>ANSWER</h3>
-                <p>{card.backText}</p>
-                <button onClick={(event) => {
-                  this.handleSave(event, card._id)
-                  }}>SAVE</button>
-                <button onClick={this.handleFlip}>FLIP</button>
-              </div>
-            </div>
-          </div>
-          )
-        })
-    ) 
-    : 
-    (<div>No flashcards saved</div>)
-    
-    return (
-      <div className="single-group-page">
-        <div className="single-group-banner">
-          <h1>{school}</h1>
-          <h3>{subject}</h3>
-          <Link to={{
-            pathname: '/group/' + groupId + '/new-card'
-          }}>
-          <span>Add New Card</span>
-          </Link>
+  render(){
+    return(
+      
+     <div className={this.state.isFlipped ? "flip-card card-flip-motion" : "flip-card"}>
+      <div className={this.state.isFlipped ? "flip-card-inner card-flip-motion" : "flip-card-inner"}>
+        <div className="flip-card-front">
+          <h1>hi</h1>
+          <button onClick={this.handleFlip}>flip</button>
         </div>
-        <div className="group-flashcard-container">
-          <div>{groupDeckCards}</div>
+        <div className="flip-card-back">
+          <h1>bye</h1>
+          <button onClick={this.handleFlip}>flip</button>
         </div>
-        <Navbar />
       </div>
-    );
+    </div>
+    )
   }
+
+ 
+
+  // render () {
+  //   const {school, subject, flashcards, groupId, isFlipped} = this.state;
+  //   const groupDeckCards = flashcards.length ? (
+  //     flashcards.map(card => {
+  //       return (
+  //         <div className="group-flashcard-flipper" key={card._id}>
+  //           <div className="group-flashcard">
+  //             <div className={this.state.isFlipped ? "hidden" : "group-flashcard-front"}>
+  //               <h3>QUESTION</h3>
+  //               <p>{card.frontText}</p>
+  //               <button onClick={(event) => {
+  //                 this.handleSave(event, card._id)
+  //                 }}>SAVE</button>
+  //               <button onClick={this.handleFlip}>FLIP</button>
+  //             </div>
+
+  //             <div className={this.state.isFlipped ? "hidden" : "group-flashcard-back"}>
+  //               <h3>ANSWER</h3>
+  //               <p>{card.backText}</p>
+  //               <button onClick={(event) => {
+  //                 this.handleSave(event, card._id)
+  //                 }}>SAVE</button>
+  //               <button onClick={this.handleFlip}>FLIP</button>
+  //             </div>
+  //           </div>
+  //         </div>
+  //         )
+  //       })
+  //   ) 
+  //   : 
+  //   (<div>No flashcards saved</div>)
+    
+  //   return (
+  //     <div className="single-group-page">
+  //       <div className="single-group-banner">
+  //         <h1>{school}</h1>
+  //         <h3>{subject}</h3>
+  //         <Link to={{
+  //           pathname: '/group/' + groupId + '/new-card'
+  //         }}>
+  //         <span>Add New Card</span>
+  //         </Link>
+  //       </div>
+  //       <div className="group-flashcard-container">
+  //         <div>{groupDeckCards}</div>
+  //       </div>
+  //       <Navbar />
+  //     </div>
+  //   );
+  // }
 }
 
 export default SingleGroup;
