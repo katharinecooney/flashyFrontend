@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from '../components/Navbar';
 import '../stylesheets/singleDeck.css';
+import ProfileCard from '../components/ProfileCard';
 
 class SingleDeck extends Component {
   constructor (props) {
@@ -10,9 +11,15 @@ class SingleDeck extends Component {
     };
   }
 
+  handleFlip = () => {
+    this.setState({isFlipped: !this.state.isFlipped}, console.log('handle flip', this.state));
+  }
+
   componentDidMount () {
     console.log(this.props.location.state);
   }
+
+  
 
   render () {
     const { userDeck } = this.props.location.state.groups;
@@ -22,42 +29,20 @@ class SingleDeck extends Component {
         <div className="single-deck-banner">
           <h1>View Your Notes for {subject}</h1>
         </div>
-        <div className="personal-card-container">
-          {userDeck.map(deck => {
+
+        <div className={this.state.isFlipped ? 'single-container card-flip-motion' : 'single-container'}>
+
+          {userDeck.map(card => {
             return (
-              <div className="personal-flashcard">
-                <h3>QUESTION</h3>
-                <p key={deck._id}>{deck.frontText}</p>
-              </div>
+              <ProfileCard card={card} />
             );
           })}
-        </div>
 
+        </div>
         <Navbar />
       </div>
     );
   }
 }
-
-// import React from 'react';
-// import Navbar from '../components/Navbar';
-
-// function SingleDeck (props) {
-//   state = {
-//     cardContent: ''
-//   };
-
-//   const { userDeck } = props.location.state.groups;
-//   console.log(props.location.state);
-//   return (
-//     <div>
-//       <h1>View Your Notes for {props.location.state.groups.group.subject}</h1>
-//       {userDeck.map(deck => {
-//         return (<p key={deck._id}>{deck.frontText}</p>);
-//       })}
-//       <Navbar />
-//     </div>
-//   );
-// }
 
 export default SingleDeck;

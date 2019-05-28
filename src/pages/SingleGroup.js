@@ -4,6 +4,7 @@ import group from '../lib/group-service';
 import {Link} from 'react-router-dom';
 import '../stylesheets/singleGroup.css';
 import Navbar from '../components/Navbar';
+import SingleCard from '../components/SingleCard';
 
 class SingleGroup extends Component {
   constructor(props){
@@ -23,10 +24,6 @@ class SingleGroup extends Component {
   
   }
 
-  handleFlip = () => {
-    this.setState({isFlipped: !this.state.isFlipped}, console.log('handle flip', this.state));
-  }
-
   componentDidMount(){
     console.log('component did mount', this.state)
     group.viewGroup(this.props.match.params.id)
@@ -39,51 +36,12 @@ class SingleGroup extends Component {
     )
   }
 
-  // render(){
-  //   return(
-      
-  //    <div className={this"flip-card"}>
-  //     <div className="flip-card-inner">
-  //       <div className="flip-card-front">
-  //         <h1>hi</h1>
-  //         <button onClick={this.handleFlip}>flip</button>
-  //       </div>
-  //       <div className="flip-card-back">
-  //         <h1>bye</h1>
-  //         <button onClick={this.handleFlip}>flip</button>
-  //       </div>
-  //     </div>
-  //   </div>
-  //   )
-  // }
-
   render () {
       const {school, subject, flashcards, groupId, isFlipped} = this.state;
       const groupDeckCards = flashcards.length ? (
         flashcards.map(card => {
           return (
-            <div className="group-flashcard-container" key={card._id}>
-              <div className={this.state.isFlipped ? "card-flip-motion group-flashcard" : "group-flashcard"}>
-                
-                <div className="group-flashcard-front">
-                  <h3>QUESTION</h3>
-                  <p>{card.frontText}</p>
-                  <button onClick={(event) => {
-                    this.handleSave(event, card._id)
-                    }}>SAVE</button>
-                  <button onClick={this.handleFlip}>FLIP</button>
-                </div>
-  
-                <div className="group-flashcard-back">
-                  <h3>ANSWER</h3>
-                  <p>{card.backText}</p>
-                  <button onClick={(event) => {
-                    this.handleSave(event, card._id)
-                    }}>SAVE</button>
-                  <button onClick={this.handleFlip}>FLIP</button>
-                </div>
-              </div>
-            </div>
+              <SingleCard card={card}/>
             )
           })
       ) 
@@ -98,7 +56,7 @@ class SingleGroup extends Component {
             <Link to={{
               pathname: '/group/' + groupId + '/new-card'
             }}>
-            <span>Add New Card</span>
+            <p>Add New Card</p>
             </Link>
           </div>
           <div className={this.state.isFlipped ? "group-container card-flip-motion" : "group-container"}>
