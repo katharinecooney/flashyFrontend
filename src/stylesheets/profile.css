@@ -1,13 +1,21 @@
+html {
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+}
+
 div.profile h1 {
   margin: 0;
+  font-family: 'Quicksand', sans-serif;
 }
 
 div.profile .profile-banner {
-  background-color: yellow;
+  background: #011627;
   height: 35vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #f6f7f8;
 }
 
 div.profile .profile-button-container {
@@ -16,12 +24,18 @@ div.profile .profile-button-container {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  height: 55vh;
+  min-height: 55vh;
 }
 
-div.profile .profile-button {
-  width: 80vw;
-  height: 20vh;
-  border: 1px solid green;
+button {
+  height: 150px;
+  color: #011627;
+  width: 90vw;
+  border: 4px solid #FBB13C;
   border-radius: 10px;
+  background-color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
 }
+
+

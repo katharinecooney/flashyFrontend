@@ -6,8 +6,8 @@ div.navbar {
   align-items: center;
   position: fixed;
   bottom: 0;
-  border: 1px solid lavender;
-  background-color: skyblue;
+
+  background-color: #4ECDC4;
 }
 
 div.navbar img {

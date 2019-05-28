@@ -13,6 +13,7 @@ class ProfileGroups extends Component {
   }
 
   componentDidMount() {
+    console.log('MOUNTED');
     profile.listGroups()
     .then(data => {
       this.setState({
