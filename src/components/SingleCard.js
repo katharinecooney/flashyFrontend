@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
+import group from '../lib/group-service';
 
 class Card extends Component {
   state = {
     isFlipped: false,
   }
 
+  componentDidMount(){
+    console.log(this.props.props.match.params.id)
+  }
 
   handleFlip = () => {
     this.setState({isFlipped: !this.state.isFlipped}, console.log('handle flip', this.state));
+  }
+
+  handleSave = (event, cardId) => {
+    const groupId = this.props.props.match.params.id;
+    group.saveCard(groupId, cardId);
+  
   }
   
   render () {

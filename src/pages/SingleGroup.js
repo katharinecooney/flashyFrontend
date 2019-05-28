@@ -41,7 +41,7 @@ class SingleGroup extends Component {
       const groupDeckCards = flashcards.length ? (
         flashcards.map(card => {
           return (
-              <SingleCard card={card}/>
+              <SingleCard props={this.props} card={card}/>
             )
           })
       ) 
