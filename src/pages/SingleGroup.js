@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import group from '../lib/group-service';
 import {Link} from 'react-router-dom';
 import '../stylesheets/singleGroup.css';
@@ -37,7 +37,7 @@ class SingleGroup extends Component {
   }
 
   render () {
-      const {school, subject, flashcards, groupId, isFlipped} = this.state;
+      const {school, subject, flashcards, groupId} = this.state;
       const groupDeckCards = flashcards.length ? (
         flashcards.map(card => {
           return (

@@ -16,6 +16,7 @@ import SingleDeck from './pages/SingleDeck';
 
 import CreateCard from './pages/CreateCard';
 import CreateGroup from './pages/CreateGroup';
+import CreateGroupSuccess from './pages/CreateGroupSuccess';
 import JoinGroup from './pages/JoinGroup';
 import SingleGroup from './pages/SingleGroup';
 
@@ -36,6 +37,7 @@ class App extends Component {
           <PrivateRoute exact path="/profile/me/decks/:id" component={SingleDeck} />
 
           <PrivateRoute exact path="/group/add-group" component={CreateGroup} />
+          <PrivateRoute exact path="/group/add-group-success" component={CreateGroupSuccess} />
           <PrivateRoute exact path="/group/join-group" component={JoinGroup} />
           <PrivateRoute exact path="/group/:id" component={SingleGroup} />
           <PrivateRoute exact path="/group/:id/new-card" component={CreateCard} />

@@ -1,22 +1,17 @@
-import React, {Component} from 'react';
-import auth from '../lib/auth-service';
-import group from '../lib/group-service';
-import {withAuth} from '../lib/AuthProvider';
-import {Link} from 'react-router-dom';
-import '../stylesheets/profile.css'
+import React, { Component } from 'react';
+// import auth from '../lib/auth-service';
+// import group from '../lib/group-service';
+import { withAuth } from '../lib/AuthProvider';
+import { Link } from 'react-router-dom';
+import '../stylesheets/profile.css';
 import Navbar from '../components/Navbar';
 
 class Profile extends Component {
-  state = {
+  // state = {
 
-  }
+  // }
 
-  // componentDidMount(){    
-  //   group.viewGroup("5ce6b65b381f624f3f44d286")
-  //     .then((data) => console.log(data))
-  // };
-
-  render() {
+  render () {
     console.log(this.props);
     return (
       <div className='profile'>
@@ -29,7 +24,7 @@ class Profile extends Component {
         </div>
         <Navbar />
       </div>
-    )
+    );
   }
 }
 

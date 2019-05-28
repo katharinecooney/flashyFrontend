@@ -27,7 +27,7 @@ class ProfileDecks extends Component {
   }
 
   render() {
-    const {groups, loading} = this.state;
+    const {groups} = this.state;
     return (
       <div className="profile-decks">
         <div className="profile-decks-banner">

@@ -22,7 +22,7 @@ class CreateCard extends Component {
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    let {frontText, backText } = this.state;
+    // let {frontText, backText } = this.state;
     let groupId = this.props.match.params.id;
     group.createCard(this.state, groupId)
     .then((newCard)=> {

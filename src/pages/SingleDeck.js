@@ -34,7 +34,7 @@ class SingleDeck extends Component {
 
           {userDeck.map(card => {
             return (
-              <ProfileCard card={card} />
+              <ProfileCard props={this.props} card={card} />
             );
           })}
 

@@ -1,13 +1,30 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import profile from '../lib/profile-service';
 
 class ProfileCard extends Component {
-  state = {
-    isFlipped: false,
+  constructor(props) {
+    super(props);
+    this.state = {
+      isFlipped: false,
+      isDeleted: false
+    }
   }
-
+  
   handleFlip = () => {
     this.setState({isFlipped: !this.state.isFlipped}, console.log('handle flip', this.state));
   }
+
+  handleDelete = () => {
+    this.setState({isDeleted: true});
+    let groupId = this.props.props.match.params.id;
+    let cardId = this.props.card._id;
+    profile.deleteCard(groupId, cardId)
+      .then(() => {console.log('DELETED THE CARD')})
+  }
+
+componentDidMount(){
+  this.setState({isDeleted: true}, console.log('profileCard location', this.props.props.match.params.id));
+}
 
   render() {
     const {card} = this.props;
@@ -20,8 +37,8 @@ class ProfileCard extends Component {
               <h3>QUESTION</h3>
               <p>{card.frontText}</p>
               <button onClick={(event) => {
-                this.handleSave(event, card._id);
-              }}>SAVE</button>
+                this.handleDelete(event, card._id);
+              }}>DELETE</button>
               <button onClick={this.handleFlip}>FLIP</button>
             </div>
 
@@ -29,8 +46,8 @@ class ProfileCard extends Component {
               <h3>ANSWER</h3>
               <p>{card.backText}</p>
               <button onClick={(event) => {
-                this.handleSave(event, card._id);
-              }}>SAVE</button>
+                this.handleDelete(event, card._id);
+              }}>DELETE</button>
               <button onClick={this.handleFlip}>FLIP</button>
             </div>
           </div>

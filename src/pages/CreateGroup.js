@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import {Redirect} from 'react-router-dom';
-import axios from 'axios';
 import group from '../lib/group-service';
 import Navbar from '../components/Navbar';
 import '../stylesheets/createGroup.css';
@@ -10,12 +8,13 @@ class CreateGroup extends Component {
     school: '',
     subject: '',
     infoMessage: '',
-    idMessage: ''
+    idMessage: '',
+    hasCreatedGroup: false
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
-    let {school, subject, passcode } = event.target;
+    // let {school, subject, passcode } = event.target;
 
     group.createGroup(this.state)
     .then((newGroup)=> {
@@ -24,10 +23,18 @@ class CreateGroup extends Component {
         school: '',
         subject: '',
         infoMessage: `A study group for ${newGroup.subject} has been created!`,
-        idMessage: `The passcode is ${newGroup._id}.`
+        idMessage: `The passcode is ${newGroup._id}.`,
+        hasCreatedGroup: true
+      }, 
+      this.props.history.push({
+        pathname: '/group/add-group-success',
+        state: { nameOfClass: newGroup.subject, passcode: newGroup._id }
       })
-    })    
+      )
+    })  
   }
+
+  
 
   handleChange = (event) => {
     event.preventDefault();
@@ -52,6 +59,9 @@ class CreateGroup extends Component {
             <span>{this.state.infoMessage}</span>
             <span>{this.state.idMessage}</span>
             <button type="submit">Submit</button>
+            
+
+
           </form>
         </div>
         <Navbar />
