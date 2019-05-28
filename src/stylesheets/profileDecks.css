@@ -7,11 +7,13 @@ div.profile-decks h1 {
 }
 
 div.profile-decks .profile-decks-banner {
-  background-color: yellow;
+  background: #011627;
+  color: #f6f7f8;
   height: 35vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100vw;
 }
 
 div.decks-container {
@@ -23,13 +25,13 @@ div.decks-container {
 }
 
 div.profile-decks div.single-deck {
-  border: 1px solid green;
+  border: 2px solid #FBB13C;
   border-radius: 5px;
-  box-shadow: 2px 2px 2px green;
-  width: 40vw;
-  height: 120px;
-  margin: 15px 0;
+  width: 45vw;
+  height: 140px;
+  margin: 10px 0;
   justify-content: center;
+  text-align: center;
   display: flex;
   align-items: center;
 }
@@ -37,5 +39,5 @@ div.profile-decks div.single-deck {
 div.profile-decks .deck-content a {
   text-decoration: none;
   text-align: center;
-  
+  color: #011627;
 }
