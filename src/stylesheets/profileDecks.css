@@ -14,6 +14,10 @@ div.profile-decks .profile-decks-banner {
   justify-content: center;
   align-items: center;
   width: 100vw;
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+  flex-wrap: wrap;
 }
 
 div.decks-container {
@@ -27,7 +31,7 @@ div.decks-container {
 div.profile-decks div.single-deck {
   border: 2px solid #FBB13C;
   border-radius: 5px;
-  width: 45vw;
+  width: 43vw;
   height: 140px;
   margin: 10px 0;
   justify-content: center;

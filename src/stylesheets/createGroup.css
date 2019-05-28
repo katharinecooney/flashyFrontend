@@ -1,5 +1,6 @@
 div.create-group-page .create-group-banner {
-  background-color: yellow;
+  background: #011627;
+  color: #f6f7f8;
   height: 35vh;
   display: flex;
   justify-content: center;
@@ -29,6 +30,7 @@ div.create-group-page button {
   height: 40px;
   border-radius: 10px;
   width: 100px;
+  font-weight: 300;
 }
 
 div.create-group-page input {
@@ -36,5 +38,6 @@ div.create-group-page input {
   width: 80%;
   max-width: 400px;
   height: 30px;
-  border: 1px solid rgb(231, 229, 229);
+  border: 1px solid #FF3366;
+  border-radius: 10px;
 }

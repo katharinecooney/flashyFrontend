@@ -46,12 +46,13 @@ class ProfileGroups extends Component {
                 </div>
                 )})
               )}
-        </div>
-
-        <div className="profile-groups-button-container">
+              <div className="profile-groups-button-container">
           <Link to="/group/add-group">Create Group</Link>
           <Link to="/group/join-group">Join Group</Link>
         </div>
+        </div>
+
+        
         
         <Navbar />
 

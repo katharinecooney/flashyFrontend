@@ -27,7 +27,7 @@ div.profile .profile-button-container {
   min-height: 55vh;
 }
 
-button {
+.profile-button-container button {
   height: 150px;
   color: #011627;
   width: 90vw;
@@ -36,6 +36,7 @@ button {
   background-color: white;
   font-family: 'Open Sans', sans-serif;
   font-size: 1rem;
+  font-weight: 300;
 }
 
 
