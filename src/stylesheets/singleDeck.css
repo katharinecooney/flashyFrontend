@@ -12,7 +12,7 @@ div.single-deck-page .single-deck-banner {
   height: 35vh;
   display: flex;
   justify-content: center;
-  /* align-items: center; */
+  align-items: center;
   text-align: center;
 }
 

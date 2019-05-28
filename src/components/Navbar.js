@@ -8,9 +8,9 @@ class Navbar extends Component {
     const { user, logout, isLoggedin } = this.props;
     return (
       <div className="navbar">
-        <Link to="/profile/me"><img src="./src/images/user.png" alt="profile-logo"/></Link>
-        <Link to="/profile/me/decks"><img src="../images/note.png" alt="notes-logo"/></Link>
-        <Link to="/profile/me/groups"><img src="../images/team.png" alt="groups-logo"/></Link>
+        <Link to="/profile/me"><img src={process.env.PUBLIC_URL + '/images/user.png'} alt="profile-logo"/></Link>
+        <Link to="/profile/me/decks"><img src={process.env.PUBLIC_URL + '/images/note.png'} alt="notes-logo"/></Link>
+        <Link to="/profile/me/groups"><img src={process.env.PUBLIC_URL + '/images/team.png'} alt="groups-logo"/></Link>
         <img onClick={logout} src="https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzEwNC84MTkvb3JpZ2luYWwvY3V0ZS1raXR0ZW4uanBn" alt=""/>
       </div>
     );
