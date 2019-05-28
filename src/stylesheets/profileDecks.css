@@ -21,6 +21,7 @@ div.decks-container {
   flex-wrap: wrap;
   justify-content: space-evenly;
   padding: 30px 0;
+  margin-bottom: 50px;
 }
 
 div.profile-decks div.single-deck {

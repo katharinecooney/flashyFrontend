@@ -10,6 +10,7 @@ div.single-group-page .single-group-banner {
 .group-container {
   display: flex;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
 div.single-group-page .group-flashcard-container {
@@ -17,10 +18,9 @@ div.single-group-page .group-flashcard-container {
   justify-content: center;
   align-items: center;
   margin: 20px 0;
-  margin-bottom: 70px;
+  margin-bottom: 30px;
   width: 80vw;
   min-height: 250px;
-  border: 1px solid black;
 }
 
 div.single-group-page .group-flashcard {
