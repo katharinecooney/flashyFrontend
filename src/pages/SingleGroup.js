@@ -52,7 +52,7 @@ class SingleGroup extends Component {
           })
       ) 
       : 
-      (<div>No flashcards saved</div>)
+      (<div className="no">No flashcards saved</div>)
 
       return (
         <div className="single-group-page">

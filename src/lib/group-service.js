@@ -32,7 +32,8 @@ class Group {
   saveCard (groupId, cardId) {
     return this.group
       .put(`/group/${groupId}/card/${cardId}/save`)
-      .then(({ data }) => data);
+      .then(({ data }) => data)
+      .catch((err) => console.log(err));
   }
 
   updateCard (groupId, cardId, newCard) {

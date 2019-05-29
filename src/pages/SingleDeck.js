@@ -21,6 +21,7 @@ class SingleDeck extends Component {
   }
 
   componentDidMount () {
+    console.log(this.props)
     const {groups} = 
     this.props.location.state;
     auth.me()
@@ -55,16 +56,19 @@ class SingleDeck extends Component {
   }
 
   render () {
+    console.log(this.state);
     const {loading} = this.state;
+    // const {userDeck} = this.props.location.state.groups;
     if (!loading) {
       const { userDeck } = this.state.groups;
+      console.log('USERDECK' ,userDeck);
       const { subject } = this.state.groups.group;
       return (
         <div className="single-deck-page">
           <div className="single-deck-banner">
             <h1>View Your Notes for {subject}</h1>
           </div>
-  
+
           <div className={this.state.isFlipped ? 'single-container card-flip-motion' : 'single-container'}>
   
             {userDeck.map(card => {
@@ -78,7 +82,7 @@ class SingleDeck extends Component {
         </div>
       );
     } else {
-      return null
+      return null;
     }
   }
 }

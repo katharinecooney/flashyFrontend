@@ -93,10 +93,12 @@ div.single-group-page .group-flashcard {
 .group-flashcard-back button,
 .group-flashcard-front button {
   background-color: white;
-  width: 35vw;
+  width: 70px;
   padding: 10px;
   border-radius: 10px;
-  border: 1px solid rgba(78, 205, 197, 0.219);
+  background-color: #FF3366;
+  border: none;
+  color: white;
 } 
 
 .group-flashcard-back .card-button-container,
@@ -119,3 +121,9 @@ div.single-group-page .group-flashcard {
   top: 0; */
 }
 
+/* .no-items-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+} */

@@ -28,6 +28,7 @@ class ProfileDecks extends Component {
 
   render() {
     const {groups} = this.state;
+    console.log(this.state);
     return (
       <div className="profile-decks">
         <div className="profile-decks-banner">

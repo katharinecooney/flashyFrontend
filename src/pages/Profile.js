@@ -15,8 +15,8 @@ class Profile extends Component {
           <h1>Welcome, {this.props.user.username}</h1>
         </div>
         <div className="profile-button-container">
-          <Link to="/profile/me/decks"><button className="profile-button">View Saved Flashcards</button></Link>
-          <Link to="/profile/me/groups"><button className="profile-button">View Saved Groups</button></Link>
+          <Link to="/profile/me/decks"><button className="profile-button">Saved Flashcards</button></Link>
+          <Link to="/profile/me/groups"><button className="profile-button">Groups</button></Link>
         </div>
         <Navbar />
       </div>

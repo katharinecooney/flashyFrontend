@@ -20,14 +20,11 @@ class Card extends Component {
 
   handleSave = (event, cardId) => {
     const groupId = this.props.props.match.params.id;
-    group.saveCard(groupId, cardId);
+    group.saveCard(groupId, cardId)
+      .then((response)=>{
+        console.log(response);
+      })
   }
-  
-  // handleEdit = () => {
-  //   const cardId = this.props.card._id;
-  //   const groupId = this.props.props.match.params.id;
-  //   () => this.props.history.push(`/group/${groupId}/card/${cardId}/update`);
-  // }
 
   render () {
     
@@ -40,9 +37,11 @@ class Card extends Component {
             <h3>QUESTION</h3>
             <p>{card.frontText}</p>
             <div className="card-button-container">
+
               <button onClick={(event) => {
                 this.handleSave(event, card._id)
                 }}>SAVE</button>
+
               <button onClick={this.handleFlip}>FLIP</button>
               <Link to={{pathname: `/group/${this.props.props.match.params.id}/card/${this.props.card._id}/update`, state:{card}}}><button>Edit</button></Link>
             </div>
@@ -53,9 +52,11 @@ class Card extends Component {
             <h3>ANSWER</h3>
             <p>{card.backText}</p>
             <div className="card-button-container">
+              
               <button onClick={(event) => {
                 this.handleSave(event, card._id)
                 }}>SAVE</button>
+
               <button onClick={this.handleFlip}>FLIP</button>
               <Link to={{pathname: `/group/${this.props.props.match.params.id}/card/${this.props.card._id}/update`, state:{card}}}><button>Edit</button></Link>
             </div>

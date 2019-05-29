@@ -4,7 +4,7 @@ div.login  {
   min-width: 100vw;
   justify-content: center;
   align-items: center;
-  background-color: #6b2d5c
+  background: #011627;
 }
 
 div.login form {
@@ -22,11 +22,17 @@ div.login form input {
   width: 80%;
   max-width: 400px;
   height: 30px;
-  border: 1px solid rgb(231, 229, 229);
+  border: 1px solid #FF3366;
+  border-radius: 10px;
 }
 
 div.login button {
+  margin: 15px 0;
   height: 40px;
   border-radius: 10px;
   width: 100px;
+  font-weight: 300;
+  background-color: #fbb13c;
+  color: #011627;
+  border: none;
 }

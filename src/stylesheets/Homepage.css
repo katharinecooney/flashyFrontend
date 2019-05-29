@@ -8,13 +8,14 @@ div.homepage {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #119da4;
-  
+  background: #011627;
   text-align: center;
 }
 
 div.homepage-content {
   background-color: white;
+  border-top: 4px solid #f36;
+  border-bottom: 4px solid #f36;
   padding: 20px 0;
   width: 100vw;
 }
@@ -25,4 +26,6 @@ div.homepage-button-container button {
   border-radius: 10px;
   margin: 0 10px;
   width: 100px;
+  background-color: #fbb13c;
+  border: none;
 }
