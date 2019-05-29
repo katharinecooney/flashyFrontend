@@ -32,6 +32,10 @@ div.create-group-success-content {
 
 div.create-group-success-container button {
   height: 40px;
+  vertical-align: center;
   border-radius: 10px;
+  margin: 0 10px;
   width: 100px;
+  background-color: #fbb13c;
+  border: none;
 }
