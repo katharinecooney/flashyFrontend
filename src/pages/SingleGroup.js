@@ -14,14 +14,20 @@ class SingleGroup extends Component {
         school: '',
         subject: '',
         flashcards: [],
-        isFlipped: false
+        isFlipped: false,
+        isCodeRevealed: false
       }
   }
 
   handleSave = (event, cardId) => {
     const groupId = this.props.match.params.id;
     group.saveCard(groupId, cardId);
-  
+  }
+
+  handlePassCodeReveal = () => {
+    this.setState({
+      isCodeRevealed: true
+    })
   }
 
   componentDidMount(){
@@ -58,6 +64,17 @@ class SingleGroup extends Component {
             }}>
             <p>Add New Card</p>
             </Link>
+
+
+            {
+              this.state.isCodeRevealed ? (<p onClick={this.handlePassCodeReveal}>{groupId}</p>) : (
+                <p onClick={this.handlePassCodeReveal}>Get Group Code</p>
+              )
+            }
+
+            
+            
+
           </div>
           <div className={this.state.isFlipped ? "group-container card-flip-motion" : "group-container"}>
             <div>{groupDeckCards}</div>

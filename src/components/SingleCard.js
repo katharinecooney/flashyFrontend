@@ -29,19 +29,25 @@ class Card extends Component {
           <div className="group-flashcard-front">
             <h3>QUESTION</h3>
             <p>{card.frontText}</p>
-            <button onClick={(event) => {
-              this.handleSave(event, card._id)
-              }}>SAVE</button>
-            <button onClick={this.handleFlip}>FLIP</button>
+            <div className="card-button-container">
+              <button onClick={(event) => {
+                this.handleSave(event, card._id)
+                }}>SAVE</button>
+              <button onClick={this.handleFlip}>FLIP</button>
+            </div>
+            
           </div>
 
           <div className="group-flashcard-back">
             <h3>ANSWER</h3>
             <p>{card.backText}</p>
-            <button onClick={(event) => {
-              this.handleSave(event, card._id)
-              }}>SAVE</button>
-            <button onClick={this.handleFlip}>FLIP</button>
+            <div className="card-button-container">
+              <button onClick={(event) => {
+                this.handleSave(event, card._id)
+                }}>SAVE</button>
+              <button onClick={this.handleFlip}>FLIP</button>
+            </div>
+            
           </div>
         </div>
       </div>
