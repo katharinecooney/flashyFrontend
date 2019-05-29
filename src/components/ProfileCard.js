@@ -38,19 +38,25 @@ componentDidMount(){
             <div className="single-flashcard-front">
               <h3>QUESTION</h3>
               <p>{card.frontText}</p>
-              <button onClick={(event) => {
+              <div className="card-button-container">
+                <button onClick={(event) => {
                 this.handleDelete(event, card._id);
               }}>DELETE</button>
-              <button onClick={this.handleFlip}>FLIP</button>
+                <button onClick={this.handleFlip}>FLIP</button>
+              </div>
+              
             </div>
 
             <div className="single-flashcard-back">
               <h3>ANSWER</h3>
               <p>{card.backText}</p>
-              <button onClick={(event) => {
+              <div className="card-button-container">
+                <button onClick={(event) => {
                 this.handleDelete(event, card._id);
               }}>DELETE</button>
-              <button onClick={this.handleFlip}>FLIP</button>
+                <button onClick={this.handleFlip}>FLIP</button>
+              </div>
+              
             </div>
           </div>
         </div>

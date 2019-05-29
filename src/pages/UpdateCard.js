@@ -7,8 +7,8 @@ class UpdateCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      frontText: '',
-      backText: ''
+      frontText: this.props.location.state.card.frontText,
+      backText: this.props.location.state.card.backText,
     }
   }
 
@@ -27,7 +27,7 @@ class UpdateCard extends Component {
 
     console.log('cardId ', cardId, 'groupId', groupId, 'card content', this.state);
 
-    group.updateCard(cardId, groupId, this.state)
+    group.updateCard(groupId, cardId, this.state)
     .then((newCard)=> {
       console.log(newCard);
       this.setState({
@@ -37,6 +37,7 @@ class UpdateCard extends Component {
     })    
   }    
       render () {
+        const {frontText, backText} = this.state
         return (
           <div className="create-card-page">
             <div className="create-card-banner">
@@ -45,10 +46,10 @@ class UpdateCard extends Component {
             <div className="create-card-container">
               <form onSubmit={this.handleFormSubmit}>
                 <label htmlFor="frontText">Enter Your Question</label>
-                <textarea onChange={this.handleChange} name="frontText" id="frontText" >
+                <textarea value={frontText} onChange={this.handleChange} name="frontText" id="frontText" >
                 </textarea>
                 <label htmlFor="backText">Enter Your Answer</label>
-                <textarea onChange={this.handleChange} name="backText" id="backText">
+                <textarea value={backText} onChange={this.handleChange} name="backText" id="backText">
                 </textarea>
                 <button type="submit">Submit</button>
               </form>

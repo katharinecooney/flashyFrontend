@@ -35,9 +35,10 @@ class Group {
       .then(({ data }) => data);
   }
 
-  updateCard (groupId, cardId) {
+  updateCard (groupId, cardId, newCard) {
+    const { frontText, backText } = newCard;
     return this.group
-      .put(`/group/${groupId}/card/${cardId}/update`)
+      .put(`/group/${groupId}/card/${cardId}/update`, { frontText, backText })
       .then(({ data }) => data);
   }
 

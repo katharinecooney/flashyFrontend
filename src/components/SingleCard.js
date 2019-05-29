@@ -44,6 +44,7 @@ class Card extends Component {
                 this.handleSave(event, card._id)
                 }}>SAVE</button>
               <button onClick={this.handleFlip}>FLIP</button>
+              <Link to={{pathname: `/group/${this.props.props.match.params.id}/card/${this.props.card._id}/update`, state:{card}}}><button>Edit</button></Link>
             </div>
             
           </div>
@@ -56,7 +57,7 @@ class Card extends Component {
                 this.handleSave(event, card._id)
                 }}>SAVE</button>
               <button onClick={this.handleFlip}>FLIP</button>
-              <Link to={`/group/${this.props.props.match.params.id}/card/${this.props.card._id}/update`}><button >Edit</button></Link>
+              <Link to={{pathname: `/group/${this.props.props.match.params.id}/card/${this.props.card._id}/update`, state:{card}}}><button>Edit</button></Link>
             </div>
             
           </div>
