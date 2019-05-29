@@ -4,6 +4,7 @@ div.signup-page {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background: #011627;
 }
 
 div.signup-content{
@@ -27,13 +28,16 @@ div.signup-page form input {
   width: 80%;
   max-width: 400px;
   height: 30px;
-  border: 1px solid rgb(231, 229, 229);
+  border: 1px solid #FF3366;
+  border-radius: 10px;
 }
-
-
 
 div.signup-page button {
   height: 40px;
+  vertical-align: center;
   border-radius: 10px;
+  margin: 0 10px;
   width: 100px;
+  background-color: #fbb13c;
+  border: none;
 }
