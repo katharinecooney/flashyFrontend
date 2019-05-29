@@ -31,6 +31,9 @@ div.create-group-page button {
   border-radius: 10px;
   width: 100px;
   font-weight: 300;
+  background-color: #fbb13c;
+  color: #011627;
+  border: none;
 }
 
 div.create-group-page input {

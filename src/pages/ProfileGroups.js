@@ -36,8 +36,8 @@ class ProfileGroups extends Component {
           {loading ? <p>Loading...</p> : (
             groups.map(({group}) => {
               return(
-                <div className="profile-group">
-                  <div key={group._id}>
+                <div className="profile-group" key={group._id}>
+                  <div >
                     <Link to={'/group/' + group._id}>
                       <p>{group.school}</p>
                       <p>{group.subject}</p>

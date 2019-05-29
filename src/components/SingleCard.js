@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import group from '../lib/group-service';
+import { withAuth } from '../lib/AuthProvider';
 
 class Card extends Component {
   state = {
     isFlipped: false,
+    isCardSaved: false
   }
 
   componentDidMount(){
-    console.log(this.props.props.match.params.id)
+    console.log(this.props.user)
   }
 
   handleFlip = () => {
@@ -21,6 +23,8 @@ class Card extends Component {
   }
   
   render () {
+    
+
     const {card} = this.props;
     return (
       <div className="group-flashcard-container" key={card._id}>
@@ -55,4 +59,4 @@ class Card extends Component {
   }
 }
 
-export default Card;
+export default withAuth(Card);

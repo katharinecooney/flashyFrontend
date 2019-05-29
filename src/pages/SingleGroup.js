@@ -26,7 +26,7 @@ class SingleGroup extends Component {
 
   handlePassCodeReveal = () => {
     this.setState({
-      isCodeRevealed: true
+      isCodeRevealed: !this.state.isCodeRevealed
     })
   }
 
@@ -47,38 +47,37 @@ class SingleGroup extends Component {
       const groupDeckCards = flashcards.length ? (
         flashcards.map(card => {
           return (
-              <SingleCard props={this.props} card={card}/>
+              <SingleCard props={this.props} card={card} key={card._id}/>
             )
           })
       ) 
       : 
       (<div>No flashcards saved</div>)
-      
+
       return (
         <div className="single-group-page">
           <div className="single-group-banner">
             <h1>{school}</h1>
             <h3>{subject}</h3>
-            <Link to={{
-              pathname: '/group/' + groupId + '/new-card'
-            }}>
-            <p>Add New Card</p>
-            </Link>
-
-
-            {
-              this.state.isCodeRevealed ? (<p onClick={this.handlePassCodeReveal}>{groupId}</p>) : (
-                <p onClick={this.handlePassCodeReveal}>Get Group Code</p>
-              )
-            }
-
-            
-            
-
+                
+            <div className="group-banner-button-container">
+              <Link to={{
+                pathname: '/group/' + groupId + '/new-card'
+              }}>
+              <p>Add New Card</p>
+              </Link>
+              {
+                this.state.isCodeRevealed ? (<p className="passcode" onClick={this.handlePassCodeReveal}>{groupId}</p>) : (
+                  <p onClick={this.handlePassCodeReveal}>Get Group Code</p>
+                )
+              }
+            </div>
           </div>
+
           <div className={this.state.isFlipped ? "group-container card-flip-motion" : "group-container"}>
             <div>{groupDeckCards}</div>
           </div>
+
           <Navbar />
         </div>
       );

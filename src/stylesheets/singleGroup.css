@@ -3,14 +3,18 @@ div.single-group-page .single-group-banner {
   color: #f6f7f8;
   min-height: 35vh;
   display: flex;
+  flex-wrap: wrap;
+  text-align: center;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 div.single-group-page .single-group-banner h1,
 div.single-group-page .single-group-banner h3 {
   margin: 10px 0;
+  padding: 0 20px;
 }
 
 div.single-group-page .single-group-banner p {
@@ -19,8 +23,16 @@ div.single-group-page .single-group-banner p {
   border: 1px solid #f6f7f8;
   padding: 10px 15px;
   margin-top: 10px;
+  font-size: .8rem;
 }
 
+div.single-group-page .single-group-banner p.passcode {
+  font-size: 10px;
+
+  padding: 10px 15px;
+  margin-top: 10px;
+  word-wrap: break-word;
+}
 
 .group-container {
   display: flex;
@@ -98,3 +110,12 @@ div.single-group-page .group-flashcard {
 .card-flip-motion .group-flashcard-container {
   transform: rotateY(180deg);
 }
+
+.group-banner-button-container {
+  display: flex;
+  width: 100vw;
+  justify-content: space-around;
+  /* position: sticky;
+  top: 0; */
+}
+

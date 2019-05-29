@@ -7,10 +7,6 @@ import '../stylesheets/profile.css';
 import Navbar from '../components/Navbar';
 
 class Profile extends Component {
-  // state = {
-
-  // }
-
   render () {
     console.log(this.props);
     return (

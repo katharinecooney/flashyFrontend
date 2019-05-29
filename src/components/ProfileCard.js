@@ -19,7 +19,9 @@ class ProfileCard extends Component {
     let groupId = this.props.props.match.params.id;
     let cardId = this.props.card._id;
     profile.deleteCard(groupId, cardId)
-      .then(() => {console.log('DELETED THE CARD')})
+      .then(() => {
+        this.props.getNewDeck(groupId)
+      })
   }
 
 componentDidMount(){
