@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import group from '../lib/group-service';
 import { withAuth } from '../lib/AuthProvider';
+import {Link} from 'react-router-dom';
 
 class Card extends Component {
   state = {
     isFlipped: false,
     isCardSaved: false
+
   }
 
   componentDidMount(){
-    console.log(this.props.user)
+    console.log('PROPS', this.props)
   }
 
   handleFlip = () => {
@@ -19,12 +21,16 @@ class Card extends Component {
   handleSave = (event, cardId) => {
     const groupId = this.props.props.match.params.id;
     group.saveCard(groupId, cardId);
-  
   }
   
+  // handleEdit = () => {
+  //   const cardId = this.props.card._id;
+  //   const groupId = this.props.props.match.params.id;
+  //   () => this.props.history.push(`/group/${groupId}/card/${cardId}/update`);
+  // }
+
   render () {
     
-
     const {card} = this.props;
     return (
       <div className="group-flashcard-container" key={card._id}>
@@ -50,6 +56,7 @@ class Card extends Component {
                 this.handleSave(event, card._id)
                 }}>SAVE</button>
               <button onClick={this.handleFlip}>FLIP</button>
+              <Link to={`/group/${this.props.props.match.params.id}/card/${this.props.card._id}/update`}><button >Edit</button></Link>
             </div>
             
           </div>

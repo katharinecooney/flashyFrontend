@@ -35,6 +35,12 @@ class Group {
       .then(({ data }) => data);
   }
 
+  updateCard (groupId, cardId) {
+    return this.group
+      .put(`/group/${groupId}/card/${cardId}/update`)
+      .then(({ data }) => data);
+  }
+
   viewGroup (groupId) {
     return this.group
       .get(`/group/${groupId}`)

@@ -35,8 +35,7 @@ class SingleDeck extends Component {
           })
         }
       })
-    })
-    
+    })  
   }
 
   getNewDeck = (groupId) => {
@@ -54,8 +53,6 @@ class SingleDeck extends Component {
       })
     })
   }
-
-  
 
   render () {
     const {loading} = this.state;

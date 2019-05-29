@@ -19,6 +19,7 @@ import CreateGroup from './pages/CreateGroup';
 import CreateGroupSuccess from './pages/CreateGroupSuccess';
 import JoinGroup from './pages/JoinGroup';
 import SingleGroup from './pages/SingleGroup';
+import UpdateCard from './pages/UpdateCard';
 
 class App extends Component {
   render () {
@@ -41,6 +42,7 @@ class App extends Component {
           <PrivateRoute exact path="/group/join-group" component={JoinGroup} />
           <PrivateRoute exact path="/group/:id" component={SingleGroup} />
           <PrivateRoute exact path="/group/:id/new-card" component={CreateCard} />
+          <PrivateRoute exact path="/group/:groupId/card/:cardId/update" component={UpdateCard} />
 
           <Route path="/**" component={ErrorPage}/>
         </Switch>
