@@ -25,6 +25,7 @@ class ProfileDecks extends Component {
     }
     )
     console.log('ProfileDecks component did mount groups', groups);
+    console.log(groups.length)
   }
 
   render() {
@@ -35,7 +36,9 @@ class ProfileDecks extends Component {
         <div className="profile-decks-banner">
           <h1>View Your Decks</h1>
         </div>
-        <div className="decks-container">
+        {
+          !groups.length ? <div className="no-decks-message">You have no decks yet!</div> : (
+            <div className="decks-container">
         {groups.map((groupInformation => {
           const group = groupInformation.group
           return(
@@ -54,6 +57,9 @@ class ProfileDecks extends Component {
             )
         }))}
         </div>
+          )
+        }
+        
         <Navbar />
       </div>
     )

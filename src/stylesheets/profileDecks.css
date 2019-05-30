@@ -46,3 +46,12 @@ div.profile-decks .deck-content a {
   text-align: center;
   color: #011627;
 }
+
+.no-decks-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  text-align: center;
+  padding: 30px;
+}
