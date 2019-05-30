@@ -121,6 +121,10 @@ div.single-group-page .group-flashcard {
   justify-content: space-around;
 }
 
+.group-banner-button-container a {
+  text-decoration: none;
+}
+
 .no-flashcards-message {
   display: flex;
   justify-content: center;

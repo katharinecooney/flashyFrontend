@@ -24,6 +24,7 @@ class ProfileDecks extends Component {
       })
     }
     )
+    console.log('ProfileDecks component did mount groups', groups);
   }
 
   render() {
