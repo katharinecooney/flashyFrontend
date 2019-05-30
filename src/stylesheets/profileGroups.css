@@ -35,21 +35,32 @@ div.profile-groups-page .profile-group a {
 
 div.profile-groups-button-container {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-bottom: 70px;
-  width: 90vw;
+  width: 100vw;
 }
 
 div.profile-groups-button-container a {
   text-decoration: none;
-  margin: 20px 0;
+  margin: 20px 10px;
   height: 60px;
   border: 1px solid #FF3366;
   background-color: #FF3366;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 43vw;
+  width: 40vw;
+  text-align: center;
   border-radius: 10px;
   color: white;
+}
+
+.no-groups-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  text-align: center;
+  padding: 30px;
 }
