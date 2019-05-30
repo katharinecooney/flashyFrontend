@@ -92,7 +92,6 @@ div.single-group-page .group-flashcard {
   flex-direction: column;
 }
 
-.group-flashcard-back button,
 .group-flashcard-front button {
   background-color: white;
   width: 70px;
@@ -102,6 +101,15 @@ div.single-group-page .group-flashcard {
   border: none;
   color: white;
 } 
+
+.group-flashcard-back button {
+  width: 70px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #fbb13c;
+  border: none;
+  color: white;
+}
 
 .group-flashcard-back .card-button-container,
 .group-flashcard-front .card-button-container {

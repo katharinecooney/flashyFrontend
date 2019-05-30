@@ -43,7 +43,7 @@ class Card extends Component {
                 }}>SAVE</button>
 
               <button onClick={this.handleFlip}>FLIP</button>
-              <Link to={{pathname: `/group/${this.props.props.match.params.id}/card/${this.props.card._id}/update`, state:{card}}}><button>Edit</button></Link>
+              <Link to={{pathname: `/group/${this.props.props.match.params.id}/card/${this.props.card._id}/update`, state:{card}}}><button>EDIT</button></Link>
             </div>
             
           </div>
@@ -58,7 +58,7 @@ class Card extends Component {
                 }}>SAVE</button>
 
               <button onClick={this.handleFlip}>FLIP</button>
-              <Link to={{pathname: `/group/${this.props.props.match.params.id}/card/${this.props.card._id}/update`, state:{card}}}><button>Edit</button></Link>
+              <Link to={{pathname: `/group/${this.props.props.match.params.id}/card/${this.props.card._id}/update`, state:{card}}}><button>EDIT</button></Link>
             </div>
             
           </div>
