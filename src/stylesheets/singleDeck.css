@@ -47,6 +47,7 @@ div.single-container {
   position: absolute;
   backface-visibility: hidden;  
   border-radius: 10px;  
+  text-align: center;
 }
 
 .single-flashcard-front {
