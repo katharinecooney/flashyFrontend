@@ -141,3 +141,13 @@ div.single-group-page .group-flashcard {
   text-align: center;
   padding: 30px;
 }
+
+.saved-message {
+  color: white;
+  background-color: #fbb13c;
+  border-radius: 6px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  padding: 7px 0;
+}

@@ -32,12 +32,13 @@ div.decks-container {
 div.profile-decks div.single-deck {
   border: 2px solid #FBB13C;
   border-radius: 5px;
-  width: 43vw;
+  width: 38vw;
   height: 140px;
   margin: 10px 0;
   justify-content: center;
   text-align: center;
   display: flex;
+  padding: 20px;
   align-items: center;
 }
 

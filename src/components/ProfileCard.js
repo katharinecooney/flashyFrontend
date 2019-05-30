@@ -11,7 +11,7 @@ class ProfileCard extends Component {
   }
   
   handleFlip = () => {
-    this.setState({isFlipped: !this.state.isFlipped}, console.log('handle flip', this.state));
+    this.setState({isFlipped: !this.state.isFlipped});
   }
 
   handleDelete = () => {
@@ -25,7 +25,7 @@ class ProfileCard extends Component {
   }
 
 componentDidMount(){
-  this.setState({isDeleted: true}, console.log('profileCard location', this.props.props.match.params.id));
+  this.setState({isDeleted: true});
 }
 
   render() {
