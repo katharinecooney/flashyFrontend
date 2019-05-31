@@ -16,7 +16,6 @@ class JoinGroup extends Component {
 
     group.joinGroup(this.state)
     .then((newGroup)=> {
-      console.log(newGroup);
       let id = this.state.passcode;
       this.props.history.push('/group/' + id)
     })
@@ -27,8 +26,7 @@ class JoinGroup extends Component {
     let {name, value} = event.target
     this.setState({
       [name]: value
-    }, () => {console.log(this.state)}
-    )
+    })
   }
 
   render () {

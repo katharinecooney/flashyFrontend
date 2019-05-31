@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Navbar from '../components/Navbar';
 import '../stylesheets/singleDeck.css';
 import ProfileCard from '../components/ProfileCard';
-import profile from '../lib/profile-service';
 import {withAuth} from '../lib/AuthProvider';
 import auth from '../lib/auth-service'
 
@@ -17,16 +16,14 @@ class SingleDeck extends Component {
   }
 
   handleFlip = () => {
-    this.setState({isFlipped: !this.state.isFlipped}, console.log('handle flip', this.state));
+    this.setState({isFlipped: !this.state.isFlipped});
   }
 
   componentDidMount () {
-    console.log(this.props)
     const {groups} = 
     this.props.location.state;
     auth.me()
     .then((user) => {
-      console.log(user)
       user.groups.forEach((eachGroup) => {
         if(groups.group._id === eachGroup.group._id) {
           this.props.location.state.groups = eachGroup;
@@ -42,7 +39,6 @@ class SingleDeck extends Component {
   getNewDeck = (groupId) => {
     auth.me()
     .then((user) => {
-      console.log(user)
       user.groups.forEach((eachGroup) => {
         if(groupId === eachGroup.group._id) {
           this.props.location.state.groups = eachGroup;
@@ -56,12 +52,9 @@ class SingleDeck extends Component {
   }
 
   render () {
-    console.log(this.state);
     const {loading} = this.state;
-    // const {userDeck} = this.props.location.state.groups;
     if (!loading) {
       const { userDeck } = this.state.groups;
-      console.log('USERDECK' ,userDeck);
       const { subject } = this.state.groups.group;
       return (
         <div className="single-deck-page">

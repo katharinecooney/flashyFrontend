@@ -18,7 +18,6 @@ class CreateGroup extends Component {
 
     group.createGroup(this.state)
     .then((newGroup)=> {
-      console.log(newGroup);
       this.setState({
         school: '',
         subject: '',

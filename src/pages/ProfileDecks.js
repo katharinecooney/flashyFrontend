@@ -24,13 +24,10 @@ class ProfileDecks extends Component {
       })
     }
     )
-    console.log('ProfileDecks component did mount groups', groups);
-    console.log(groups.length)
   }
 
   render() {
     const {groups} = this.state;
-    console.log(this.state);
     return (
       <div className="profile-decks">
         <div className="profile-decks-banner">

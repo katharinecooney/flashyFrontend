@@ -24,12 +24,8 @@ class UpdateCard extends Component {
     event.preventDefault();
     let cardId = this.props.match.params.cardId;
     let groupId = this.props.match.params.groupId;
-
-    console.log('cardId ', cardId, 'groupId', groupId, 'card content', this.state);
-
     group.updateCard(groupId, cardId, this.state)
     .then((newCard)=> {
-      console.log(newCard);
       this.setState({
         frontText: '',
         backText: ''

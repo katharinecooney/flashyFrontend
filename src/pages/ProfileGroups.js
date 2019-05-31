@@ -13,20 +13,17 @@ class ProfileGroups extends Component {
   }
 
   componentDidMount() {
-    console.log('MOUNTED');
     profile.listGroups()
     .then(data => {
       this.setState({
       groups: data.groups,
       loading: false
+      })
     })
-  })
-
   }
 
   render () {
     const {loading, groups} = this.state;
-    console.log('the groups are', groups);
     return (
       <div className="profile-groups-page">
         <div className="profile-groups-banner">

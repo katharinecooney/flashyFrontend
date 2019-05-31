@@ -31,7 +31,6 @@ class SingleGroup extends Component {
   }
 
   componentDidMount(){
-    console.log('component did mount', this.state)
     group.viewGroup(this.props.match.params.id)
       .then(group => this.setState({
         school: group.school,

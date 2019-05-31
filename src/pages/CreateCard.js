@@ -26,7 +26,6 @@ class CreateCard extends Component {
     let groupId = this.props.match.params.id;
     group.createCard(this.state, groupId)
     .then((newCard)=> {
-      console.log(newCard);
       this.setState({
         frontText: '',
         backText: ''

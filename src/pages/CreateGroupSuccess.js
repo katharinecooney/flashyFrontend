@@ -10,7 +10,6 @@ class CreateGroupSuccess extends Component {
   }
 
   handleCopy = (event) => {
-    console.log(event.target.innerHTML);
     navigator.clipboard.writeText(event.target.innerHTML);
     this.setState({
       text: event.target.innerHTML,
