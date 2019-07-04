@@ -1,12 +1,3 @@
-div.create-card-page .create-card-banner {
-  background: #011627;
-  color: #f6f7f8;
-  height: 35vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 div.create-card-container {
   display: flex;
   justify-content: center;

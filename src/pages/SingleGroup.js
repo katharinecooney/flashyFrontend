@@ -51,15 +51,15 @@ class SingleGroup extends Component {
           })
       ) 
       : 
-      (<div className="no-flashcards-message">No flashcards created</div>)
+      (<div className="empty-message">No flashcards created</div>)
 
       return (
         <div className="single-group-page">
-          <div className="single-group-banner">
+          <div className="banner">
             <h1>{school}</h1>
             <h3>{subject}</h3>
                 
-            <div className="group-banner-button-container">
+            <div className="banner-button-container">
               <Link to={{
                 pathname: '/group/' + groupId + '/new-card'
               }}>
@@ -73,7 +73,7 @@ class SingleGroup extends Component {
             </div>
           </div>
 
-          <div className={this.state.isFlipped ? "group-container card-flip-motion" : "group-container"}>
+          <div className={this.state.isFlipped ? "container card-flip-motion" : "container"}>
             <div>{groupDeckCards}</div>
           </div>
 

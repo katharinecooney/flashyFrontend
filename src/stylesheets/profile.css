@@ -4,22 +4,7 @@ html {
   font-size: 20px;
 }
 
-div.profile h1 {
-  margin: 0;
-  padding: 0 20px;
-  font-family: 'Quicksand', sans-serif;
-}
-
-div.profile .profile-banner {
-  background: #011627;
-  height: 35vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #f6f7f8;
-}
-
-div.profile .profile-button-container {
+.profile-button-container {
   width: 100vw;
   display: flex;
   flex-direction: column;

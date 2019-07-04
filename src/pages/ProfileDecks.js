@@ -30,11 +30,11 @@ class ProfileDecks extends Component {
     const {groups} = this.state;
     return (
       <div className="profile-decks">
-        <div className="profile-decks-banner">
+        <div className="banner">
           <h1>View Your Decks</h1>
         </div>
         {
-          !groups.length ? <div className="no-decks-message">You have no decks yet!</div> : (
+          !groups.length ? <div className="empty-message">You have no decks yet!</div> : (
             <div className="decks-container">
         {groups.map((groupInformation => {
           const group = groupInformation.group

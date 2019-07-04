@@ -36,7 +36,7 @@ class CreateCard extends Component {
   render () {
     return (
       <div className="create-card-page">
-        <div className="create-card-banner">
+        <div className="banner">
           <h1>Create Card</h1>
         </div>
         <div className="create-card-container">

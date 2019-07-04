@@ -20,7 +20,7 @@ class CreateGroupSuccess extends Component {
   render () {
     return (
       <div className="create-group-success-page">
-        <div className="create-group-success-banner">
+        <div className="banner">
           <h1>A study group for {this.props.location.state.nameOfClass} has been created! </h1>
         </div>
         <div className="create-group-success-container">

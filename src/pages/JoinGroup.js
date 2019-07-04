@@ -32,7 +32,7 @@ class JoinGroup extends Component {
   render () {
     return (
       <div className="join-group-page">
-        <div className="join-group-banner">
+        <div className="banner">
           <h1>Join a Group!</h1>
         </div>
         <div className="join-group-container">

@@ -1,27 +1,4 @@
-div.profile-decks {
-  min-height: 100vh;
-}
-
-div.profile-decks h1 {
-  margin: 0;
-  padding: 0 20px;
-}
-
-div.profile-decks .profile-decks-banner {
-  background: #011627;
-  color: #f6f7f8;
-  height: 35vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  box-sizing: border-box;
-  padding: 10px;
-  text-align: center;
-  flex-wrap: wrap;
-}
-
-div.decks-container {
+.decks-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -29,7 +6,7 @@ div.decks-container {
   margin-bottom: 50px;
 }
 
-div.profile-decks div.single-deck {
+div.single-deck {
   border: 2px solid #FBB13C;
   border-radius: 5px;
   width: 38vw;
@@ -46,13 +23,4 @@ div.profile-decks .deck-content a {
   text-decoration: none;
   text-align: center;
   color: #011627;
-}
-
-.no-decks-message {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  text-align: center;
-  padding: 30px;
 }

@@ -32,10 +32,10 @@ componentDidMount(){
     const {card} = this.props;
     return (
       <div>
-        <div className="single-flashcard-container" key={card._id}>
-          <div className={this.state.isFlipped ? 'card-flip-motion single-flashcard' : 'single-flashcard'}>
+        <div className="flashcard-container" key={card._id}>
+          <div className={this.state.isFlipped ? 'card-flip-motion flashcard' : 'flashcard'}>
 
-            <div className="single-flashcard-front">
+            <div className="flashcard-front">
               <h3>QUESTION</h3>
               <p>{card.frontText}</p>
               <div className="card-button-container">
@@ -47,7 +47,7 @@ componentDidMount(){
               
             </div>
 
-            <div className="single-flashcard-back">
+            <div className="flashcard-back">
               <h3>ANSWER</h3>
               <p>{card.backText}</p>
               <div className="card-button-container">

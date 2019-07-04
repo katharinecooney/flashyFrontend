@@ -46,7 +46,7 @@ class CreateGroup extends Component {
   render () {
     return (
       <div className="create-group-page">
-        <div className='create-group-banner'>
+        <div className='banner'>
           <h1>Create Group</h1>
         </div>
         <div className="create-group-container">

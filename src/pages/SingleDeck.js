@@ -58,11 +58,11 @@ class SingleDeck extends Component {
       const { subject } = this.state.groups.group;
       return (
         <div className="single-deck-page">
-          <div className="single-deck-banner">
+          <div className="banner">
             <h1>View Your Notes for {subject}</h1>
           </div>
 
-          <div className={this.state.isFlipped ? 'single-container card-flip-motion' : 'single-container'}>
+          <div className={this.state.isFlipped ? 'container card-flip-motion' : 'container'}>
   
             {userDeck.map(card => {
               return (

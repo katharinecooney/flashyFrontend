@@ -26,20 +26,20 @@ class ProfileGroups extends Component {
     const {loading, groups} = this.state;
     return (
       <div className="profile-groups-page">
-        <div className="profile-groups-banner">
+        <div className="banner">
           <h1>View Your Groups</h1>
         </div>
     {
     !this.state.groups.length ? 
     <div>
-      <div className="no-groups-message">You are not in any groups!</div>
+      <div className="empty-message">You are not in any groups!</div>
       <div className="profile-groups-button-container">
         <Link to="/group/add-group">Create Group</Link>
         <Link to="/group/join-group">Join Group</Link>
       </div>
     </div> 
     : 
-    (<div className="profile-groups-container">
+    (<div className="container">
       {loading ? <p>Loading...</p> : (
         groups.map(({group}) => {
           return(

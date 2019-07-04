@@ -1,26 +1,30 @@
-div.single-deck-page h1 {
+h1 {
   margin: 0;
   padding: 0 20px;
 }
 
-div.single-deck-page .single-deck-banner {
+.banner {
   background: #011627;
+  font-family: 'Quicksand', sans-serif;
   color: #f6f7f8;
-  height: 35vh;
+  min-height: 35vh;
   display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  position: relative;
 }
 
-div.single-container {
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 70px;
 }
 
-.single-flashcard-container {
+.flashcard-container {
   display: flex; 
   justify-content: center;
   align-items: center;
@@ -30,7 +34,7 @@ div.single-container {
   min-height: 250px;
 }
 
- .single-flashcard {
+ .flashcard {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,14 +47,14 @@ div.single-container {
 }
 
 
-.single-flashcard-front, .single-flashcard-back {
+.flashcard-front, .flashcard-back {
   position: absolute;
   backface-visibility: hidden;  
   border-radius: 10px;  
   text-align: center;
 }
 
-.single-flashcard-front {
+.flashcard-front {
   border: 2px solid #fbb13c;
   min-height: 250px;
   width: 80vw;
@@ -60,7 +64,7 @@ div.single-container {
   flex-direction: column;
 }
 
-.single-flashcard-back {
+.flashcard-back {
   transform: rotateY(180deg);
   border: 2px solid #f36;
   min-height: 250px;
@@ -72,21 +76,13 @@ div.single-container {
 }
 
 .card-flip-motion,
-.card-flip-motion .single-flashcard-container {
+.card-flip-motion .flashcard-container {
   transform: rotateY(180deg);
 }
 
-.single-flashcard-back .card-button-container,
-.single-flashcard-front .card-button-container {
+.flashcard-back .card-button-container,
+.flashcard-front .card-button-container {
   display: flex;
   width: 80vw;
   justify-content: space-around;
-}
-
-.single-deck-page button {
-  background-color: white;
-  width: 35vw;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid rgba(78, 205, 197, 0.219);
 }

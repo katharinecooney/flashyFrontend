@@ -10,7 +10,7 @@ class Profile extends Component {
   render () {
     return (
       <div className='profile'>
-        <div className='profile-banner'>
+        <div className='banner'>
           <h1>Welcome, {this.props.user.username}</h1>
         </div>
         <div className="profile-button-container">
